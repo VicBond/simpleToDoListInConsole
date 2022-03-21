@@ -9,6 +9,10 @@ while (command !== 'quit' && command !== 'q') {
       console.log(`${i}: ${task}`);
     });
     console.log('********************************');
+  } else if(command === 'new'){
+    const newTask = prompt('Enter a new task');
+    todos.push(newTask);
+    console.log(`${newTask} - added to the list!`);
   }
   command = prompt('Please enter a command');
 
