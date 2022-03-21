@@ -13,6 +13,10 @@ while (command !== 'quit' && command !== 'q') {
     const newTask = prompt('Enter a new task');
     todos.push(newTask);
     console.log(`${newTask} - added to the list!`);
+  } else if(command === 'delete'){
+    const index = prompt('Enter a task number to delete it from the list');
+    const deletedTask = todos.splice(index, 1);
+    console.log(`${deletedTask} - deleted from the list!`);
   }
   command = prompt('Please enter a command');
 
