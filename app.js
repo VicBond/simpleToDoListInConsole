@@ -14,9 +14,15 @@ while (command !== 'quit' && command !== 'q') {
     todos.push(newTask);
     console.log(`${newTask} - added to the list!`);
   } else if(command === 'delete'){
-    const index = prompt('Enter a task number to delete it from the list');
-    const deletedTask = todos.splice(index, 1);
-    console.log(`${deletedTask} - deleted from the list!`);
+    const index = parseInt(prompt('Enter a task number to delete it from the list'));
+
+    if(!Number.isNaN(index)){
+      const deletedTask = todos.splice(index, 1);
+      console.log(`${deletedTask} - deleted from the list!`);
+    } else {
+      console.log('Unknown index');
+    }
+
   }
   command = prompt('Please enter a command');
 
